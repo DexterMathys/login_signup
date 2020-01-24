@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in! | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="limiter">
+        <div class="container-login100" style="background-image: url('{{ asset('assets/images/bg-01.jpg') }}');">
+			<div id="login-div"></div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		const urlBackground = "{{ asset('assets/images/bg-01.jpg') }}";
+		const last_username = "{{ last_username | escape('js') }}";
+		const autenticate = "{{ csrf_token('authenticate') | escape('js') }}";
+		{% if error %}
+			const error = {
+				message: "{{ error.messageKey|trans(error.messageData, 'security') }}"
+			};
+		{% else %}
+			const error = null;
+		{% endif %}
+	</script>
+	<script src="./build/login.js"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+
+    <div id="navbar-div"></div>
+    <div id="index-div"></div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        const user = {
+            username: "{{ user.username | default('') }}"
+        };
+        const logoutUrl = "{{ path('app_logout') }}";
+	</script>
+    <script src="./build/index.js"></script>
+{% endblock %}
