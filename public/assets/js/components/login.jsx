@@ -104,7 +104,7 @@ export default class Login extends React.Component {
                             </a>
                         </p>
                         <p>
-                            <a className="txt1" href="#">
+                            <a className="txt1" href={signUpUrl}>
                                 Don't have an account? Sign up
                             </a>
                         </p>

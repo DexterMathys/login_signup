@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign up! | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="limiter">
+        <div class="container-login100" style="background-image: url('{{ asset('assets/images/bg-01.jpg') }}');">
+			<div id="signup-div">
+                <div class="wrap-login100">
+                    {{ form_start(registrationForm, {'attr': {'class': 'login100-form'}}) }}
+                        <span class="login100-form-logo">
+                            <i class="fab fa-sellsy"></i>
+                        </span>
+                        <span class="login100-form-title p-b-34 p-t-27">Sign up</span>
+
+                        {% if not formValid %}
+                            <div class="alert alert-danger">
+                                {{ form_errors(registrationForm) }}
+                                {{ form_errors(registrationForm.email) }}
+                                {{ form_errors(registrationForm.plainPassword) }}
+                                {{ form_errors(registrationForm.repeatPassword) }}
+                            </div>
+                        {% endif %}
+
+                        <div class="wrap-input100 validate-input" data-validate="Enter email">
+                            {{ form_widget(registrationForm.email, {'attr': {'class': 'input100', 'placeholder': 'Email'}}) }}
+                            <span class="focus-input100" data-placeholder=""></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'input100', 'placeholder': 'Password'}}) }}
+                            <span class="focus-input100" data-placeholder=""></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Repeat password">
+                            {{ form_widget(registrationForm.repeatPassword, {'attr': {'class': 'input100', 'placeholder': 'Repeat password'}}) }}
+                            <span class="focus-input100" data-placeholder=""></span>
+                        </div>
+                        <div class="d-flex">
+                            {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'm-t-5 m-l-5 n-m-r-20'}}) }}
+                            <label for="registration_form_agreeTerms" class="required input100">Agree terms</label>
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">Sign up</button>
+                        </div>
+
+                        <div class="text-center p-t-90">
+                            <p>
+                                <a class="txt1" href="/login">You have an account? Log in</a>
+                            </p>
+                        </div>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		const urlBackground = "{{ asset('assets/images/bg-01.jpg') }}";
+	</script>
+{% endblock %}
