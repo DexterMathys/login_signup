@@ -9,6 +9,7 @@ module.exports = {
 		base: './public/assets/js/base.jsx',
 		login: './public/assets/js/login.jsx',
 		index: './public/assets/js/index.jsx',
+		passwordRecovery: './public/assets/js/passwordRecovery.jsx',
 	},
 	output: {
 		// Save compiled files into build folder with the entry name

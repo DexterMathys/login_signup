@@ -99,7 +99,7 @@ export default class Login extends React.Component {
 
                     <div className="text-center p-t-90">
                         <p>
-                            <a className="txt1" href="#">
+                            <a className="txt1" href={passwordRecoveryUrl}>
                                 Forgot Password?
                             </a>
                         </p>

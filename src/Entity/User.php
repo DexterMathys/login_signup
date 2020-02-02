@@ -35,6 +35,16 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $recoveryCode;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isActive = true;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -111,5 +121,29 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getRecoveryCode(): ?string
+    {
+        return $this->recoveryCode;
+    }
+
+    public function setRecoveryCode(?string $recoveryCode): self
+    {
+        $this->recoveryCode = $recoveryCode;
+
+        return $this;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(bool $isActive): self
+    {
+        $this->isActive = $isActive;
+
+        return $this;
     }
 }

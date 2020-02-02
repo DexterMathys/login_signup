@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Password recovery</title>
+</head>
+<body>
+    <p> 
+        They requested to modify the password for access to the Login/Signup Proyect for the user <strong>{{recovery_user|default('')}}</strong>.
+        If you want to complete the process, please <a href="{{ url('recovery',{'code': recovery_code|default('') }) }}">click here</a> or enter to the next link.
+    </p>
+    <p>
+        {{ url('recovery',{'code': recovery_code|default('') }) }}
+    </p>
+    <p>
+        If you did not ask to change the password and you think this message is an error, delete this email and do not pay attention.
+    </p>
+
+    <p>Thank you very much.</p>
+</body>        
+</html>

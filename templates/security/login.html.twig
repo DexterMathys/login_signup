@@ -17,7 +17,6 @@
 {% block javascripts %}
 	{{ parent() }}
 	<script>
-		const urlBackground = "{{ asset('assets/images/bg-01.jpg') }}";
 		const last_username = "{{ last_username | escape('js') }}";
 		const autenticate = "{{ csrf_token('authenticate') | escape('js') }}";
 		{% if error %}
@@ -29,6 +28,7 @@
 		{% endif %}
 
 		const signUpUrl = "{{ path('app_register') }}";
+		const passwordRecoveryUrl = "{{ path('password_recovery') }}";
 	</script>
 	<script src="./build/login.js"></script>
 {% endblock %}

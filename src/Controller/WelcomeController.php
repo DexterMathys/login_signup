@@ -23,7 +23,7 @@ class WelcomeController extends Controller {
       if (!$user) {
           return $this->redirectToRoute('app_login');
       }
-        return $this->render('Welcome/index.html.twig', array('user' => $user));
+      return $this->render('Welcome/index.html.twig', array('user' => $user));
     }
 
 }
