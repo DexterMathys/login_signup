@@ -1,4 +1,6 @@
 {
+    "name": "login_signup",
+    "description": "Simple Log-in and Sign-up proyect. Made with React, JSX and Symfony 4.",
     "type": "project",
     "license": "proprietary",
     "require": {
